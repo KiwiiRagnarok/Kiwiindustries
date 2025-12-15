@@ -1,0 +1,138 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #0d0d0d;
+    color: white;
+    margin: 0;
+}
+
+/* Barre du haut avec effet néon */
+.top-bar {
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    flex-grow: 1;
+    text-shadow: 0 0 20px #ffffff;
+}
+
+/* Menu déroulant Langue */
+.language-select select {
+    padding: 8px;
+    border: none;
+    font-size: 18px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ffff;
+}
+
+/* Conteneur des entrées */
+.calculator-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Champs de saisie */
+.input-field {
+    width: 100px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #333;
+    border: 2px solid #ff00ff;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.input-field:focus {
+    outline: none;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Bouton calculer avec effet néon */
+.calculate-btn {
+    background-color: #00ffff;
+    border: none;
+    padding: 20px;
+    font-size: 22px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff00ff;
+    transition: 0.3s;
+}
+
+.calculate-btn:hover {
+    background-color: #ff00ff;
+    box-shadow: 0 0 30px #ff00ff;
+}
+
+/* Résultat */
+.result-container {
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid #ff00ff;
+    background-color: #333;
+    box-shadow: 0 0 20px #ff00ff;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lien Discord */
+.discord {
+    margin-top: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.discord img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 15px #00ffff);
+}
+
+.discord img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 25px #00ffff);
+}
+
+/* Séparation avec l'effet néon */
+.separator {
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    margin: 30px auto;
+    box-shadow: 0 0 10px #ff00ff;
+}.back-button {
+    position: absolute;
+    top: 20px; /* Distance depuis le haut */
+    left: 20px; /* Distance depuis la gauche */
+    z-index: 1000; /* S'assure que le bouton est au-dessus des autres éléments */
+}
+
+.back-button img {
+    width: 60px; /* Ajuste la taille du bouton */
+    height: auto;
+    transition: 0.3s ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+}
+
+.back-button img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 1));
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul des ressources de level</title>
+	<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<!-- Barre du haut -->
+<div class="top-bar">
+    <div class="title" id="welcome-text">Calcul des Ressources de level</div>
+    <div class="language-select">
+        <select onchange="changeLanguage(this.value)">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+</div>
+
+<!-- Conteneur du calcul -->
+<div class="calculator-container">
+    <label for="start-level" id="start-level-label">Niveau de départ :</label>
+    <input type="number" id="start-level" class="input-field">
+    <label for="end-level" id="end-level-label">Niveau final :</label>
+    <input type="number" id="end-level" class="input-field">
+    <button class="calculate-btn" onclick="calculateResources()">Calculer</button>
+</div>
+	 <!-- Résultat total -->
+<div class="result-container" id="total-resources"></div>
+	<script>
+    function changeLanguage(lang) {
+        if (lang === 'en') {
+            document.getElementById('welcome-text').innerText = 'Resource Level Calculation';
+            document.getElementById('start-level-label').innerText = 'Start Level:';
+            document.getElementById('end-level-label').innerText = 'End Level:';
+            document.querySelector('.calculate-btn').innerText = 'Calculate';
+        } else {
+            document.getElementById('welcome-text').innerText = 'Calcul des Ressources de Level';
+            document.getElementById('start-level-label').innerText = 'Niveau de départ :';
+            document.getElementById('end-level-label').innerText = 'Niveau final :';
+            document.querySelector('.calculate-btn').innerText = 'Calculer';
+        }
+    }
+
+    function calculateResources() {
+        const startLevel = parseInt(document.getElementById('start-level').value);
+        const endLevel = parseInt(document.getElementById('end-level').value);
+        let totalResources = {};
+
+        // Simuler des données de ressources
+        const resourcesData = {
+            1: { wood: 10, stone: 5 },
+            2: { wood: 20, stone: 10 },
+            3: { wood: 30, stone: 15 }
+        };
+
+        for (let level = startLevel; level <= endLevel; level++) {
+            const resources = resourcesData[level];
+            for (let resource in resources) {
+                if (!totalResources[resource]) totalResources[resource] = 0;
+                totalResources[resource] += resources[resource];
+            }
+        }
+
+        let totalResourcesHTML = '<ul>';
+        for (let resource in totalResources) {
+            totalResourcesHTML += `<li>${resource}: ${totalResources[resource]}</li>`;
+        }
+        totalResourcesHTML += '</ul>';
+
+        document.getElementById('total-resources').innerHTML = totalResourcesHTML;
+    }
+</script>
+  <script>
+        // Données des ressources nécessaires pour chaque niveau
+        const resourcesData = {
+           131:{ "vernis": 16,"tige d'etain": 2,"minerai de meteorite": 4,"rune de puissance": 16,"loki": 3,"boule de feu": 1,"argent": 600,"point d'influence": 700 } ,
+		    132:{ "nectar": 20,"resine": 27,"colle de poisson": 8,"argile": 4,"lingot de cuivre": 6,"boule de feu": 1,"argent": 610,"point d'influence": 720 } ,
+			133:{ "larme de dragon": 21,"vernis": 14,"souffre": 8,"lingot de meteorite": 2,"pierre d'ame": 102,"boule de feu": 1,"argent": 620,"point d'influence": 735 } ,
+			134:{ "planche d'erable": 8,"lingot de meteorite": 2,"pierre d'ame": 104,"nectar": 17,"resine": 28,"boule de feu": 2,"argent": 630,"point d'influence": 750 } ,
+			135:{ "rune de puissance": 21,"pierre d'ame": 106,"lingot de meteorite": 2,"poudre alchimique": 29,"lingot de cuivre": 6,"boule de feu": 3,"argent": 645,"point d'influence": 765 } ,
+			136:{ "lingot de cuivre": 9,"larme de dragon": 18,"lingot de meteorite": 2,"attache forgees": 3,"vernis": 15,"coeur de glace": 1,"argent": 675,"point d'influence": 810 } ,
+			137:{ "lingot de meteorite": 3,"souffre": 9,"cire a cacheter": 16,"colle de poisson": 9,"argile": 5,"coeur de glace": 3,"argent": 710,"point d'influence": 855 } ,
+			138:{ "planche d'erable": 10,"lingot de meteorite": 2,"minerai de meteorite": 5,"lingot de cuivre": 8,"nectar": 20,"coeur de glace": 3,"argent": 745,"point d'influence": 900 } ,
+			139:{ "lingot de meteorite": 3,"planche d'erable": 8,"vernis": 17,"orichalque": 8,"rune de puissance": 21,"coeur de glace": 5,"argent": 780,"point d'influence": 945 } ,
+			140:{ "planche d'erable": 11,"souffre": 11,"orichalque": 8,"colle de poisson": 11,"larme de dragon": 22,"coeur de glace": 7,"argent": 820,"point d'influence": 990 } ,
+			141:{ "lingot de meteorite": 4,"loki": 4,"cire a cacheter": 19,"rune de puissance": 23,"colle de poisson": 11,"bague": 2,"point de clan": 200 } ,
+			142:{ "souffre": 16,"rune de puissance": 25,"attache forgees": 4,"argile": 7,"resine": 42,"bague": 3,"point de clan": 205 } ,
+			143:{ "argile": 9,"orichalque": 10,"cire a cacheter": 22,"larme de dragon": 27,"resine": 45,"bague": 3,"point de clan": 210 } ,
+			144:{ "larme de dragon": 36,"poudre alchimique": 48,"orichalque": 11,"vernis": 24,"cire a cacheter": 24,"bague": 3,"point de clan": 215 } ,
+			145:{ "souffre": 19,"attache forgees": 5,"minerai de meteorite": 8,"poudre alchimique": 52,"argile": 8,"bague": 5,"point de clan": 220 } ,
+			146:{ "planche d'erable": 17,"minerai de meteorite": 9,"colle de poisson": 17,"cire a cacheter": 28,"poudre alchimique": 57,"coin": 1,"point de clan": 230 },
+			147:{ "tige d'etain": 8,"souffre": 18,"attache forgees": 6,"lingot de meteorite": 5,"vernis": 31,"coin": 2,"point de clan": 240 } ,
+			148:{ "lingot de meteorite": 9,"lingot de cuivre": 15,"orichalque": 15,"larme de dragon": 38,"planche d'erable": 15,"coin": 3,"point de clan": 250 } ,
+			149:{ "souffre": 36,"attache forgees": 6,"lingot de meteorite": 5,"rune de puissance": 41,"colle de poisson": 20,"coin": 4,"point de clan": 265 } ,
+			150:{ "lingot de meteorite": 12,"attache forgees": 7,"colle de poisson": 22,"argile": 12,"loki": 8,"coin": 5,"point de clan": 280 } ,
+			151:{ "lingot de meteorite": 13,"lingot de cuivre": 19,"sel": 27,"cire a cacheter": 40,"larme de dragon": 48,"encre": 1,"argent": 875,"point d'influence": 701 } ,
+			152:{ "lingot de meteorite": 15,"loki": 10,"souffre": 27,"rune de puissance": 54,"colle de poisson": 27,"encre": 1,"argent": 935,"point d'influence": 750 } ,
+			153:{ "lingot de cuivre": 48,"minerai de meteorite": 17,"attache forgees": 10,"poudre alchimique": 101,"resine": 101,"encre": 1,"argent": 1000,"point d'influence": 810 } ,
+			154:{ "brique": 39,"minerai de meteorite": 19,"argile": 19,"orichalque": 27,"colle de poisson": 34,"encre": 1,"argent": 1070,"point d'influence": 870 } ,
+			155:{ "planche d'erable": 60,"brique": 21,"attache forgees": 12,"rune de puissance": 76,"minerai de meteorite": 21,"encre": 1,"argent": 1145,"point d'influence": 930 } ,
+			156:{ "colle de poisson": 87,"argile": 25,"brique": 25,"tige d'etain": 15,"lingot de cuivre": 34,"encre": 1,"argent": 1260,"point d'influence": 1020 } ,
+			157:{ "lingot de cuivre": 80,"lingot de meteorite": 14,"souffre": 50,"brique": 28,"tige d'etain": 18,"encre": 1,"argent": 1385,"point d'influence": 1125 } ,
+			158:{ "tige d'etain": 41,"rune de puissance": 116,"attache forgees": 19,"brique": 33,"colle de poisson": 58,"encre": 2,"argent": 1525,"point d'influence": 1245 } ,
+			159:{ "lingot de meteorite": 38,"attache forgees": 22,"brique": 38,"souffre": 66,"colle de poisson": 66,"encre": 2,"argent": 1680,"point d'influence": 1365 } ,
+			160:{ "attache forgees": 53,"tige d'etain": 28,"colle de poisson": 80,"lingot de meteorite": 22,"lingot de cuivre": 63,"encre": 3,"argent": 1850,"point d'influence": 1500 } ,
+        };
+		function calculateResources() {
+    const startLevel = parseInt(document.getElementById('start-level').value);  // Convertir en nombre
+    const endLevel = parseInt(document.getElementById('end-level').value);      // Convertir en nombre
+
+    let totalResources = {};
+
+    // Assure-toi que resourcesData est correctement défini quelque part
+    for (let level = startLevel; level <= endLevel; level++) {
+        const resources = resourcesData[level];  // Assure-toi que resourcesData[level] existe
+        if (resources) {  // Vérifie si des ressources existent pour ce niveau
+            for (let resource in resources) {
+                if (!totalResources[resource]) {
+                    totalResources[resource] = 0;
+                }
+                totalResources[resource] += resources[resource];
+            }
+        }
+    }
+
+    let totalResourcesHTML = '<ul>';
+    for (let resource in totalResources) {
+        totalResourcesHTML += `<li>${resource}: ${totalResources[resource]}</li>`;
+    }
+    totalResourcesHTML += '</ul>';
+
+    document.getElementById('total-resources').innerHTML = totalResourcesHTML;
+}
+// Fonction pour générer l'URL de l'image en fonction du nom de la ressource
+function getResourceImage(resourceName) {
+    return `SITE CREATION/${resourceName}.png`;  // Assurez-vous que les images sont dans le dossier "SITE CREATION"
+}
+
+// Modification de la fonction pour inclure l'image dans l'affichage des ressources
+function calculateResources() {
+    const startLevel = parseInt(document.getElementById('start-level').value);
+    const endLevel = parseInt(document.getElementById('end-level').value);
+
+    let totalResources = {};
+
+    for (let level = startLevel; level <= endLevel; level++) {
+        const resources = resourcesData[level];
+
+        if (resources) {
+            for (let resource in resources) {
+                if (!totalResources[resource]) {
+                    totalResources[resource] = 0;
+                }
+                totalResources[resource] += resources[resource];
+            }
+        }
+    }
+
+   let totalResourcesHTML = '<ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 10px;">';
+for (let resource in totalResources) {
+    totalResourcesHTML += `<li style="text-align: center;">
+        <img src="${getResourceImage(resource)}" alt="${resource}" style="width: 50px; height: 50px;"><br>
+        ${totalResources[resource]}
+    </li>`;
+}
+totalResourcesHTML += '</ul>';
+
+    document.getElementById('total-resources').innerHTML = totalResourcesHTML;
+}
+    </script>
+	<!-- Bouton Retour -->
+<div class="back-button">
+    <a href="page1.html">
+        <img src="Retour.png" alt="Retour">
+    </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frostborn Ragnarok</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #0d0d0d;
+            color: white;
+            margin: 0;
+        }
+
+        /* Barre du haut */
+        .top-bar {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        .title {
+            font-size: 48px; /* Encore plus grand */
+            font-weight: bold;
+            flex-grow: 1;
+            text-shadow: 0 0 20px #ffffff;
+        }
+
+        /* Menu déroulant Langue */
+        .language-select select {
+            padding: 8px;
+            border: none;
+            font-size: 18px;
+            background: black;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #00ffff;
+        }
+
+        /* Séparation entre barre et boutons */
+        .separator {
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            margin: 30px auto;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* Style des boutons */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu button {
+            width: 250px; /* Plus gros */
+            background: black;
+            color: white;
+            border: 3px solid #ff00ff;
+            padding: 18px 25px;
+            font-size: 22px; /* Texte plus grand */
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            text-shadow: 0 0 15px #ffffff;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        .menu button:hover {
+            background: #ff00ff;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        /* Section Discord bien en bas */
+        .discord {
+            margin-top: 50px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .discord img {
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            transition: 0.3s;
+            filter: drop-shadow(0 0 15px #00ffff);
+        }
+
+        .discord img:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 25px #00ffff);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre du haut avec titre et menu Langue -->
+    <div class="top-bar">
+        <div class="title" id="welcome-text">Bienvenue sur Frostborn Ragnarok</div>
+        <div class="language-select">
+            <select onchange="changeLanguage(this.value)">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Ligne de séparation -->
+    <div class="separator"></div>
+
+    <h2 id="instruction-text">Choisissez une option :</h2>
+
+    
+    <div class="menu">
+        <button id="Quartier-btn" onclick="location.href='calcul 1 -185.html'">Quartier</button>
+        <button id="Classe-btn" onclick="location.href='items.html'">Classe</button>
+        <button id="Niveau-btn" onclick="location.href='calcul131-160.html'">Niveau</button>
+        <button id="Ressources-btn" onclick="location.href='items.html'">Ressources</button>
+    </div>
+
+ 
+  
+
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                document.getElementById('welcome-text').innerText = 'Welcome to Frostborn Ragnarok';
+                document.getElementById('instruction-text').innerText = 'Choose an option:';
+                document.getElementById('Quartier-btn').innerText = 'District';
+                document.getElementById('Classe-btn').innerText = 'Class';
+                document.getElementById('Niveau-btn').innerText = 'Level';
+                document.getElementById('Ressources-btn').innerText = 'Resources';
+                document.getElementById('nous-soutenir-btn').innerText = 'Support Us';
+                document.getElementById('discord-text').innerText = 'Follow us on Discord:';
+            } else {
+                document.getElementById('welcome-text').innerText = 'Bienvenue sur Frostborn Ragnarok';
+                document.getElementById('instruction-text').innerText = 'Choisissez une option :';
+                document.getElementById('Quartier-btn').innerText = 'Quartier';
+                document.getElementById('Classe-btn').innerText = 'Classe';
+                document.getElementById('Niveau-btn').innerText = 'Niveau';
+                document.getElementById('Ressources-btn').innerText = 'Ressources';
+                document.getElementById('nous-soutenir-btn').innerText = 'Nous Soutenir';
+                document.getElementById('discord-text').innerText = 'Suivez-nous sur Discord :';
+            }
+        }
+    </script>
+
+</body>
+</html>
