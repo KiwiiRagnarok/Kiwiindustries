@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Construction</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="back-button">
+            <a href="javascript:history.back()">
+                <img src="retour.png" alt="Retour">
+            </a>
+        </div>
+        <div class="title" id="title-text">🚧 En construction 🚧</div>
+        <div class="language-select">
+            <select id="language" onchange="changeLanguage()">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="content">
+        <img src="construction.png" alt="En Construction" class="construction-img">
+        <p id="description">Cette page est en construction. Revenez plus tard !</p>
+    </div>
+
+    <script>
+        function changeLanguage() {
+            let lang = document.getElementById("language").value;
+            let title = document.getElementById("title-text");
+            let description = document.getElementById("description");
+
+            if (lang === "en") {
+                title.innerHTML = "🚧 Under Construction 🚧";
+                description.innerHTML = "This page is under construction. Come back later!";
+            } else {
+                title.innerHTML = "🚧 En construction 🚧";
+                description.innerHTML = "Cette page est en construction. Revenez plus tard !";
+            }
+        }
+    </script>
+
+</body>
+</html>
